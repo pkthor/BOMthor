@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,4 +36,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/reader', function () {
+    return Inertia::render('Reader');
+})->middleware(['auth', 'verified'])->name('reader');
+
+require __DIR__.'/auth.php';
+
+Route::get('/history', function () {
+    return Inertia::render('History');
+})->middleware(['auth', 'verified'])->name('history');
 require __DIR__.'/auth.php';
