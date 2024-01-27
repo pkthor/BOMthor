@@ -8,7 +8,7 @@
       <p class="text-3xl lg:text-lg font-semibold mb-2">Family style</p>
     </div>
     <img
-      class="rounded-full h-80 w-80 lg:h-40 lg:w-40"
+      class="rounded-full h-80 w-80 lg:h-40 lg:w-40 object-cover"
       :src="currentImage"
       alt="narratorImageName no image"
     />
@@ -76,9 +76,9 @@
   </div>
 </template>
 
-<script setup>
+<!-- <script setup>
   console.log("Hello from script setup Audio.vue")
-</script>
+</script> -->
 <script>
 import { useReaderStore } from "../stores/Readers";
 import Tab2 from "./Tab2.vue";
@@ -3059,7 +3059,7 @@ export default {
   methods: {
     determineUserAndReader() {
       const user1 = usePage().props.auth.user;
-      console.log("user1 props.auth.user:", user1)
+      // console.log("user1 props.auth.user:", user1)
       const theReader = this.readers.filter(
         (reader) => reader.uuid === user1.uuid
       );
@@ -3130,11 +3130,13 @@ export default {
       this.play(this.selectedReader.src);
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
-      console.log("The current selected reader uuid is:",this.selectedReader.uuid)
-      const user1 = usePage().props.value.auth.user;
+      const user1 = usePage().props.auth.user;
+      // console.log("in next, user1 is:",user1)
+
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
+          // console.log("Hello from next button, the uuid is:", this.selectedReader.uuid)
     },
     prev() {
       this.index--;
@@ -3143,10 +3145,12 @@ export default {
       this.play(this.selectedReader.src);
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
-      const user1 = usePage().props.value.auth.user;
+      const user1 = usePage().props.auth.user;
+
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
+      // console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid, " and the user_id is:", user1.id)
     },
     updateSelectedReader(reader) {
       //not sure why this is necessary, as this.selectedReader = reader should work, but it does not.

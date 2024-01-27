@@ -44,3 +44,6 @@ Route::get('/history', function () {
 })->middleware(['auth', 'verified'])->name('history');
 
 require __DIR__.'/auth.php';
+
+Route::put('/reader', function () {
+    return "put request sent through routing";});

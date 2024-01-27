@@ -8,6 +8,7 @@ import { useReaderStore } from "../stores/Readers";
 import { useMenuStore } from "../stores/Menus";
 import Button from "../Components/Button.vue";
 import { storeToRefs,defineStore } from "pinia";
+import axios from "axios";
 
 const selectedReader = useReaderStore();
 const menuStatus = useMenuStore();
@@ -16,8 +17,12 @@ const menuIsOpen = ref(false);
 function toggleMenu() {
   menuIsOpen.value = false;
 }
-onMounted(() => {
-       })
+// onMounted(() => {
+//   axios.get('/sanctum/csrf-cookie').then(response => {
+//     // Login...
+//     console.log("In Dashboard.vue, the sanctum csrf-cookie was obtained:", response.config.xsrfCookieName)
+// });
+//        })
 function menuChosen() {
   menuStatus.isMenuOpen = !menuStatus.isMenuOpen
 }
