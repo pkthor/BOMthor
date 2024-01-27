@@ -1,13 +1,20 @@
 <script setup>
+
+import Moroni from '@/Components/Moroni.vue';
+import Christus from '@/Components/Christus.vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 
+        bg-gradient-to-b
+        from-green-500
+        to-green-100">
         <div>
             <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
+                <!-- This is currently a star placeholder in Christus.vue /> -->
+                <Moroni class="w-30 h-30 fill-current text-green-700" />
             </Link>
         </div>
 

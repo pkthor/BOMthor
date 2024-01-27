@@ -24,18 +24,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-// Route::get('/', function () {
-//     return Inertia::render('PKtest', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -47,9 +39,8 @@ Route::get('/reader', function () {
     return Inertia::render('Reader');
 })->middleware(['auth', 'verified'])->name('reader');
 
-require __DIR__.'/auth.php';
-
 Route::get('/history', function () {
     return Inertia::render('History');
 })->middleware(['auth', 'verified'])->name('history');
+
 require __DIR__.'/auth.php';

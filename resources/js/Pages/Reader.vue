@@ -16,7 +16,7 @@ import { Head } from "@inertiajs/vue3";
     <div class="py-12">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm lg:rounded-lg">
-          <div class="p-6 bg-blue-300 border-b border-gray-200">
+          <div class="p-6 bg-green-300 border-b border-gray-200">
             <h1
               class="
                 font-semibold
@@ -100,37 +100,15 @@ import { Head } from "@inertiajs/vue3";
               True".
             </p>
 
-            <h1
-              class="
-                font-semibold
-                text-5xl
-                lg:text-xl
-                text-black
-                leading-tight
-                m-auto
-              "
-            >
-              How were these conversion stories collected?
-            </h1>
-
-            <p class="px-4 mb-4 text-4xl lg:text-base">
-              During our service as full temple missionaries in
-              Rome Temple, we met some members of the church
-              wonderful. As these friendships developed, they have
-              started sharing stories of how they discovered the
-              gospel. Their stories were so fascinating and inspiring
-              faith that we asked him to write for us This is one
-              collection of these stories. We translated them into English. There
-              We apologize for any translation errors.
-            </p>
+            
 
             <img
-              class="h-40 bg-blue-400 mx-auto"
-              src="/assets/photos/ericloree.jpg"
-              alt="Eric & Loree Thorderson"
+              class="h-40 bg-green-400 mx-auto"
+              src="/assets/photos/fam.jpg"
+              alt="Thorderson"
             />
             <p class="mx-auto text-center text-2xl lg:text-base">
-              Eric & Loree Thorderson
+              Some Thordersons
             </p>
           </div>
         </div>

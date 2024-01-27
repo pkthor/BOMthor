@@ -2,10 +2,10 @@
 
 <template>
     <!-- Main Audio 'card'.  -->
-  <div class="w-screen h-screen lg:h-auto lg:w-auto relative bg-gradient-to-b from-blue-400 to-blue-100 p-8 flex flex-col items-center rounded-lg drop-shadow-lg">
+  <div class="w-screen h-screen lg:h-auto lg:w-auto relative bg-gradient-to-b from-green-400 to-green-100 p-8 flex flex-col items-center rounded-lg drop-shadow-lg">
     <div class="text-center mt-8 lg:mt-2">
-      <p class="text-6xl lg:text-xl font-bold">Il Libro di Mormon</p>
-      <p class="text-3xl lg:text-lg font-semibold mb-2">Ad alta voce</p>
+      <p class="text-6xl lg:text-xl font-bold">Book of Mormon</p>
+      <p class="text-3xl lg:text-lg font-semibold mb-2">Family style</p>
     </div>
     <img
       class="rounded-full h-80 w-80 lg:h-40 lg:w-40"
@@ -76,6 +76,9 @@
   </div>
 </template>
 
+<script setup>
+  console.log("Hello from script setup Audio.vue")
+</script>
 <script>
 import { useReaderStore } from "../stores/Readers";
 import Tab2 from "./Tab2.vue";
@@ -3055,7 +3058,8 @@ export default {
   },
   methods: {
     determineUserAndReader() {
-      const user1 = usePage().props.value.auth.user;
+      const user1 = usePage().props.auth.user;
+      console.log("user1 props.auth.user:", user1)
       const theReader = this.readers.filter(
         (reader) => reader.uuid === user1.uuid
       );
@@ -3106,10 +3110,6 @@ export default {
       this.audio.volume = this.volume / 100;
     },
     play(reader) {
-      // ????????
-      // If the current image has changed, stop playing
-      // => Trying to stop play when menu has selected a new reader
-
       if (typeof reader.src != "undefined") {
         this.audio.src = this.selectedReader.src;
       }
@@ -3119,18 +3119,18 @@ export default {
       this.isPlaying = true;
     },
     pause() {
-      // console.log("pause");
+      console.log("pause");
       this.audio.pause();
       this.isPlaying = false;
     },
     next() {
-      this.index++; //index is the location in readers array. It is equal to uuid-1.
+      this.index++; //index is the location in readers array (ie what book and chapter was last accessed). It is equal to uuid-1.
       this.index > this.readers.length - 1 ? (this.index = 5) : this.index; //returns to 1 Nefi 1
       this.updateSelectedReader(this.readers[this.index]);
       this.play(this.selectedReader.src);
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
-      // console.log("The current selected reader uuid is:",this.selectedReader.uuid)
+      console.log("The current selected reader uuid is:",this.selectedReader.uuid)
       const user1 = usePage().props.value.auth.user;
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })

@@ -2,15 +2,25 @@
 import { Head, Link } from "@inertiajs/vue3";
 
 defineProps({
-  canLogin: Boolean,
-  canRegister: Boolean,
-  laravelVersion: String,
-  phpVersion: String,
+    canLogin: {
+        type: Boolean,
+    },
+    canRegister: {
+        type: Boolean,
+    },
+    laravelVersion: {
+        type: String,
+        required: true,
+    },
+    phpVersion: {
+        type: String,
+        required: true,
+    },
 });
 </script>
 
 <template>
-  <Head title="Alta voce" />
+  <Head title="Thor BOM" />
   <meta property="og:title" content="The Rock" />
   <meta property="og:type" content="video.movie" />
   <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
@@ -21,8 +31,8 @@ defineProps({
   <div
     class="
       bg-gradient-to-b
-      from-blue-500
-      to-blue-100
+      from-green-500
+      to-green-100
       p-12
       text-center
       min-h-screen
@@ -38,8 +48,11 @@ defineProps({
       </Link>
 
       <template v-else>
-        <Link :href="route('login')" class="text-3xl lg:text-base text-gray-800 underline">
-          Accedi
+        <Link 
+          :href="route('login')" 
+          class="text-3xl lg:text-base text-gray-800 underline"
+        >
+          Log in
         </Link>
 
         <Link
@@ -47,7 +60,7 @@ defineProps({
           :href="route('register')"
           class="ml-4 text-3xl lg:text-base text-gray-800 underline"
         >
-          Registrati
+          Register
         </Link>
       </template>
     </div>
