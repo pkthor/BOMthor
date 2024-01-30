@@ -15,7 +15,7 @@ const flagSrc = ref("/assets/convImg/flagUS.png");
 
 var conversionsA = computed(() => { 
   const a = conversions2.sort(lastNameSort)
-  console.log("Check me: ",a)
+  // console.log("Check me: ",a)
   return a;
 })
 
