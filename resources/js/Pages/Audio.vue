@@ -77,8 +77,13 @@
 </template>
 
 <!-- <script setup>
-  console.log("Hello from script setup Audio.vue")
+import { ref, onUpdated } from 'vue'
+
+onUpdated(() => {
+  console.log("onUpdated called")
+})
 </script> -->
+
 <script>
 import { useReaderStore } from "../stores/Readers";
 import Tab2 from "./Tab2.vue";
@@ -3056,6 +3061,8 @@ export default {
     this.progressBar.value = 0;
     this.initProgress();
   },
+
+
   methods: {
     determineUserAndReader() {
       const user1 = usePage().props.auth.user;
@@ -3124,19 +3131,17 @@ export default {
       this.isPlaying = false;
     },
     next() {
-      this.index++; //index is the location in readers array (ie what book and chapter was last accessed). It is equal to uuid-1.
-      this.index > this.readers.length - 1 ? (this.index = 5) : this.index; //returns to 1 Nefi 1
+      this.index++; //index is the location in readers array (ie what book and chapter was last accessed). It is equal to uuid - 1 (because array starts a 0)
+      this.index > this.readers.length - 1 ? (this.index = 5) : this.index; //returns to 1 Nefi 1 after Moroni 10
       this.updateSelectedReader(this.readers[this.index]);
       this.play(this.selectedReader.src);
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
-      // console.log("in next, user1 is:",user1)
-
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
-          // console.log("Hello from next button, the uuid is:", this.selectedReader.uuid)
+console.log(plusOne.value) // 
     },
     prev() {
       this.index--;
@@ -3146,11 +3151,11 @@ export default {
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
-
+      // console.log("in prev, user1 is:",user1)
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
-      // console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid, " and the user_id is:", user1.id)
+      // console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid)
     },
     updateSelectedReader(reader) {
       //not sure why this is necessary, as this.selectedReader = reader should work, but it does not.
