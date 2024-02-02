@@ -19,18 +19,12 @@ const showingNavigationDropdown = ref(false);
                 <div class="max-w-7xl mx-auto px-4 lg:px-8">
                     <div class="flex justify-between h-16 lg:h-12">
                         <div class="flex">
-
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 lg:-my-px lg:ml-10 lg:flex">
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Book of Mormon
                                 </BreezeNavLink>
                             </div>
-                            <!-- <div class="hidden space-x-8 lg:-my-px lg:ml-10 lg:flex">
-                                <BreezeNavLink :href="route('history2')" :active="route().current('history2')">
-                                    Conversion Stories 2
-                                </BreezeNavLink>
-                            </div> -->
                             <div class="hidden space-x-8 lg:-my-px lg:ml-10 lg:flex">
                                 <BreezeNavLink :href="route('history')" :active="route().current('history')">
                                     Conversion Stories
@@ -49,7 +43,7 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeDropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
-                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-xl sm:text-sm leading-4 font-medium rounded-md text-gray-600 bg-green-100 hover:text-gray-800 focus:outline-none transition ease-in-out duration-150">
+                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-gray-600 bg-green-100 hover:text-gray-800 focus:outline-none transition ease-in-out duration-150">
                                                 {{ $page.props.auth.user.name }}
 
                                                 <!-- this is the down facing caret svg -->
@@ -64,9 +58,6 @@ const showingNavigationDropdown = ref(false);
                                         <BreezeDropdownLink :href="route('reader')" method="get" as="button" >
                                             FAQ
                                         </BreezeDropdownLink>
-                                        <!-- <BreezeDropdownLink :href="route('history2')" method="get" as="button" >
-                                            Conversion Stories 2
-                                        </BreezeDropdownLink> -->
                                         <BreezeDropdownLink :href="route('history')" method="get" as="button" >
                                             Conversion Stories
                                         </BreezeDropdownLink>
@@ -80,7 +71,7 @@ const showingNavigationDropdown = ref(false);
 
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center lg:hidden">
-                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-blue-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-blue-600 transition duration-150 ease-in-out">
+                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-green-100 focus:outline-none focus:bg-green-100 focus:text-blue-600 transition duration-150 ease-in-out">
                                 <svg class="h-12 w-12" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                     <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -97,11 +88,6 @@ const showingNavigationDropdown = ref(false);
                             Book of Mormon
                         </BreezeResponsiveNavLink>
                     </div>
-                    <!-- <div class="pt-2 pb-3 space-y-1">
-                        <BreezeResponsiveNavLink class="text-3xl" :href="route('history2')" :active="route().current('history2')">
-                            Conversion Stories 2
-                        </BreezeResponsiveNavLink>
-                    </div> -->
                     <div class="pt-2 pb-3 space-y-1">
                         <BreezeResponsiveNavLink class="text-3xl" :href="route('history')" :active="route().current('history')">
                             Conversion Stories

@@ -1,7 +1,7 @@
 <template>
     <nav class="container flex justify-between px-4 py-8 mx-auto bg-white">
   <div>
-    <h3 class="text-2xl font-medium text-blue-500">LOGO</h3>
+    <h3 class="text-2xl font-medium text-green-500">LOGO</h3>
   </div>
   <div class="hidden space-x-8 lg:flex">
     <a href="#">Menu 1</a>

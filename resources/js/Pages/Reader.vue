@@ -8,7 +8,7 @@ import { Head } from "@inertiajs/vue3";
 
   <BreezeAuthenticatedLayout>
     <template #header>
-      <h2 class="font-semibold text-3xl lg:text-xl text-gray-800 leading-tight">
+      <h2 class="font-semibold text-2xl lg:text-xl text-gray-800 leading-tight">
         FAQ
       </h2>
     </template>
@@ -20,8 +20,7 @@ import { Head } from "@inertiajs/vue3";
             <h1
               class="
                 font-semibold
-                text-6xl
-                lg:text-2xl
+                text-2xl
                 text-black
                 leading-tight
                 mb-4
@@ -33,8 +32,7 @@ import { Head } from "@inertiajs/vue3";
             <h1
               class="
                 font-semibold
-                text-5xl
-                lg:text-xl
+                text-xl
                 text-black
                 leading-tight
                 m-auto
@@ -43,15 +41,14 @@ import { Head } from "@inertiajs/vue3";
               Why do I have to “sign in”?
             </h1>
 
-            <p class="px-4 mb-2 text-4xl lg:text-base">
+            <p class="px-4 mb-2 text-base">
               Sign in allows the program to remember your last reading location.
             </p>
 
             <h1
               class="
                 font-semibold
-                text-5xl
-                lg:text-xl
+                text-xl
                 text-black
                 leading-tight
                 m-auto
@@ -60,18 +57,17 @@ import { Head } from "@inertiajs/vue3";
             Forgot your password?
             </h1>
 
-            <p class="px-4 mb-2 text-4xl lg:text-base">
+            <p class="px-4 mb-2 text-base">
               Click on "forgot your password". You will receive an email with a link to click to restore it. Once the website opens, enter your new password.
             </p>
-            <p class="px-4 mb-2 text-4xl lg:text-base">
+            <p class="px-4 mb-2 text-base">
               The password must contain a minimum of 8 characters.
             </p>
 
             <h1
               class="
                 font-semibold
-                text-5xl
-                lg:text-xl
+                text-xl
                 text-black
                 leading-tight
                 m-auto
@@ -80,7 +76,7 @@ import { Head } from "@inertiajs/vue3";
               How was this site born?
             </h1>
 
-            <p class="px-4 text-4xl lg:text-base">
+            <p class="px-4 text-base">
               In the October 2011 general conference, Elder Richard G. Scott,
               a member of the Quorum of the Twelve Apostles said: In 1991 I wanted
               give my family a special Christmas gift. I wrote in
@@ -107,7 +103,7 @@ import { Head } from "@inertiajs/vue3";
               src="/assets/photos/fam.jpg"
               alt="Thorderson"
             />
-            <p class="mx-auto text-center text-2xl lg:text-base">
+            <p class="mx-auto text-center text-base">
               Some Thordersons
             </p>
           </div>

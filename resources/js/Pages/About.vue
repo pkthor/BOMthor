@@ -4,7 +4,7 @@ This page is for non authenticated users. It is a copy of Audio.vue
 
 <template>
     <!-- Main Audio 'card'.  -->
-  <div class="w-screen h-screen lg:h-auto lg:w-auto relative bg-gradient-to-b from-blue-400 to-blue-100 p-8 flex flex-col items-center rounded-lg drop-shadow-lg">
+  <div class="w-screen h-screen lg:h-auto lg:w-auto relative bg-gradient-to-b from-green-400 to-green-100 p-8 flex flex-col items-center rounded-lg drop-shadow-lg">
     <div class="text-center mt-8 lg:mt-2">
       <p class="text-5xl lg:text-xl font-bold">Book of Mormon</p>
       <p class="text-2xl lg:text-lg font-semibold mb-2">Thorderson Family</p>

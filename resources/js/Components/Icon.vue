@@ -3,8 +3,8 @@
     id="play"
     class="
       transition
-      w-16
-      h-16
+      w-12
+      h-12
       lg:w-8 lg:h-8
       mt-4
       fill-current
@@ -25,8 +25,8 @@
     id="prev"
     class="
       transition
-      w-12
-      h-12
+      w-8
+      h-8
       lg:w-6 lg:h-6
       mt-4
       fill-current
@@ -47,8 +47,8 @@
     id="next"
     class="
       transition
-      w-12
-      h-12
+      w-8
+      h-8
       lg:w-6 lg:h-6
       mt-4
       fill-current
@@ -69,8 +69,8 @@
     id="pause"
     class="
       transition
-      w-16
-      h-16
+      w-12
+      h-12
       lg:w-8 lg:h-8
       mt-4
       fill-current

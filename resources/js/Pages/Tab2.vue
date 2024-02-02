@@ -5,7 +5,7 @@
         v-for="(item, index) in booknames"
         :key="index"
         :href="item.href"
-        class=" text-gray-800 text-3xl lg:text-base font-bold bg-white opacity-80 min-w-max"
+        class=" text-gray-800 text-base font-bold bg-white opacity-80 min-w-max"
       >
         <li>
           <button
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <div class="ml-60 z-40 -translate-x-48 lg:-translate-x-4">
+    <div class="ml-60 z-40 -translate-x-46 lg:-translate-x-4">
       <div>
         <div v-if="tab === 'Introduction'">
           <Popup0 />

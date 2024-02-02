@@ -4,23 +4,23 @@
     <!-- Main Audio 'card'.  -->
   <div class="w-screen h-screen lg:h-auto lg:w-auto relative bg-gradient-to-b from-green-400 to-green-100 p-8 flex flex-col items-center rounded-lg drop-shadow-lg">
     <div class="text-center mt-8 lg:mt-2">
-      <p class="text-6xl lg:text-xl font-bold">Book of Mormon</p>
-      <p class="text-3xl lg:text-lg font-semibold mb-2">Family style</p>
+      <p class="text-3xl font-bold">Book of Mormon</p>
+      <p class="text-2xl font-semibold mb-2">Family style</p>
     </div>
     <img
-      class="rounded-full h-80 w-80 lg:h-40 lg:w-40 object-cover"
+      class="rounded-full h-40 w-40 object-cover"
       :src="currentImage"
       alt="narratorImageName no image"
     />
-    <div class="flex flex-col items-center mt-4 mx-2 text-4xl lg:text-lg text-black font-bold">
+    <div class="flex flex-col items-center mt-4 mx-2 text-2xl text-black font-bold">
       {{ selectedReader.narrator }}
     </div>
-    <div class="flex flex-col items-center text-black text-4xl lg:text-lg font-semibold">
+    <div class="flex flex-col items-center text-black text-lg font-semibold">
       {{ selectedReader.book }}
       {{ selectedReader.chapter }}
     </div>
     <div class="container">
-      <div class="flex justify-around mt-8 lg:mt-0 items-center mb-2 h-20">
+      <div class="flex justify-around mt-0 items-center mb-2 h-12 lg:h-20">
         <button
           type="button"
           @click="prev"
@@ -66,7 +66,7 @@
               v-model="audio.currentTime"
               class="cursor-pointer w-3/4"
             />
-            <div class="flex justify-between font-semibold text-black text-4xl lg:text-lg mt-4">
+            <div class="flex justify-between font-semibold text-black text-lg mt-4">
               <span>{{ currentTimeTxt }} / {{ currentDurationTxt }}</span>
             </div>
           </div>
@@ -3141,7 +3141,6 @@ export default {
       axios.put(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
-console.log(plusOne.value) // 
     },
     prev() {
       this.index--;
