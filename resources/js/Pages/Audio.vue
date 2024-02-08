@@ -3138,7 +3138,7 @@ export default {
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
-      axios.put(
+      axios.post(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
     },
@@ -3151,7 +3151,7 @@ export default {
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
       // console.log("in prev, user1 is:",user1)
-      axios.put(
+      axios.post(
         route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
       );
       // console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid)
