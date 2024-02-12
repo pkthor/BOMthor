@@ -103,7 +103,7 @@ function selectReader(readerFileName) {
   populateSelectedReader(newReader)
 }
 function selectReaderForUser(readerFileName,user) {
-  console.log("The user ID in selectReaderForUser is: ", user.id)
+  // console.log("The user ID in selectReaderForUser is: ", user.id)
   isOpen.value = false;
   menuStatus.isMenuOpen = !menuStatus.isMenuOpen;
   const newReader = allReaders.filter((reader) => reader.audioFileName === readerFileName);

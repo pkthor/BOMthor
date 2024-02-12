@@ -2963,7 +2963,7 @@ export const useReaderStore = defineStore('reader-store', {
   actions: {
     findReader(audioFile) {
       const theReader = allReaders.filter(reader => reader.audioFileName === audioFile);
-      console.log("theReader has been filtered :", theReader[0])
+    //   console.log("theReader has been filtered :", theReader[0])
       return theReader
     },
   }

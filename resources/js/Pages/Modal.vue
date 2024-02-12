@@ -202,6 +202,6 @@ const booknames = [
   },
 ];
 function checkme() {
-  console.log(test);
+  // console.log(test);
 }
 </script>

@@ -3126,7 +3126,7 @@ export default {
       this.isPlaying = true;
     },
     pause() {
-      console.log("pause");
+      // console.log("pause");
       this.audio.pause();
       this.isPlaying = false;
     },
@@ -3142,11 +3142,11 @@ export default {
         `/api/reader/${user1.id}`, {uuid: this.selectedReader.uuid},
       )
       .then((response) => {
-        console.log("PKT: id",user1.id,"PKT: uuid",this.selectedReader.uuid,"PKT: email",user1.email,"PKT: name",user1.name);
+        // console.log("PKT: id",user1.id,"PKT: uuid",this.selectedReader.uuid,"PKT: email",user1.email,"PKT: name",user1.name);
         // console.log("PKT response.data", response.data, " and response.user_id:",response.user_id);
       })
       .catch(function(error){
-      console.log(error);
+      // console.log(error);
       })
       ;
     },
@@ -3162,7 +3162,7 @@ export default {
       axios.put(
         `/api/reader/${user1.id}`, {uuid: this.selectedReader.uuid},
       )
-      .then (console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid, " and the user_id is:", user1.id));
+      // .then (console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid, " and the user_id is:", user1.id));
     },
     updateSelectedReader(reader) {
       //not sure why this is necessary, as this.selectedReader = reader should work, but it does not.
