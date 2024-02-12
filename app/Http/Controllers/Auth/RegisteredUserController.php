@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -49,4 +50,26 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    //////////////////PKT
+    public function update(Request $request, $id)
+    {
+///////////////////////////////
+        
+//////////////////////////////
+        $user = User::find($id);
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        $user->uuid = $request->input('uuid');
+        $user->save();
+        // $chapter = $request->input('uuid');
+
+        return response()->json([
+            'message' => 'this worked',
+            'id' => $id,
+            'chapter' => $user->uuid,
+        ]);
+        
+    }
+
 }

@@ -45,7 +45,7 @@ Route::get('/history', function () {
 
 require __DIR__.'/auth.php';
 
-Route::put('/reader', function () {
-    return Inertia::render('Reader');
-})->middleware(['auth', 'verified'])->name('reader');
+// Route::put('/reader', function () {
+//     return Inertia::render('Reader');
+// })->middleware(['auth', 'verified'])->name('reader');
     // return "put request sent through routing";});

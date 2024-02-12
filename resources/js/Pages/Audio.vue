@@ -3138,9 +3138,17 @@ export default {
       this.currentImage =
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
-      axios.post(
-        route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
-      );
+      axios.put(
+        `/api/reader/${user1.id}`, {uuid: this.selectedReader.uuid},
+      )
+      .then((response) => {
+        console.log("PKT: id",user1.id,"PKT: uuid",this.selectedReader.uuid,"PKT: email",user1.email,"PKT: name",user1.name);
+        // console.log("PKT response.data", response.data, " and response.user_id:",response.user_id);
+      })
+      .catch(function(error){
+      console.log(error);
+      })
+      ;
     },
     prev() {
       this.index--;
@@ -3151,10 +3159,10 @@ export default {
         "assets/photos/" + this.selectedReader.narratorImageName + ".jpg";
       const user1 = usePage().props.auth.user;
       // console.log("in prev, user1 is:",user1)
-      axios.post(
-        route("reader", { uuid: this.selectedReader.uuid, user_id: user1.id })
-      );
-      // console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid)
+      axios.put(
+        `/api/reader/${user1.id}`, {uuid: this.selectedReader.uuid},
+      )
+      .then (console.log("Hello from prev button, the uuid is:", this.selectedReader.uuid, " and the user_id is:", user1.id));
     },
     updateSelectedReader(reader) {
       //not sure why this is necessary, as this.selectedReader = reader should work, but it does not.

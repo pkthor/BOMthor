@@ -56,4 +56,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+                
+    // Route::put('reader/{id}', [RegisteredUserController::class, 'update']);///PKT
+    // Route::post('reader', [RegisteredUserController::class, 'update']);///PKT
+    // Route::put('reader', [RegisteredUserController::class, 'update'])->middleware(['auth', 'verified'])->name('reader.update');
+
+    //For the route /update-uuid, with a put request, the 'update' function of RegisteredUserController should handle the logic.
+    
+
 });
