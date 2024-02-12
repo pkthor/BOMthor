@@ -25,8 +25,10 @@ function displayStory(name, storyItalian, storyEnglish, src) {
   storyIsOpen.value = true;
   listIsOpen.value = false;
   selectedName.value = name;
-  selectedStory.value = storyItalian;
-  unSelectedStory.value = storyEnglish;
+  // selectedStory.value = storyItalian;
+  // unSelectedStory.value = storyEnglish;
+  selectedStory.value = storyEnglish;
+  unSelectedStory.value = storyItalian;
   selectedSrcPhoto.value = src;
 }
 function resetPage() {
@@ -160,6 +162,7 @@ const goToPage = (numPage) => {
             class="pb-6 bg-green-300 border-b border-gray-200"
           >
             <!-- Show the English flag -->
+            
             <div class="flex flex-row justify-between mx-6 mt-4">
               <div>
                 <button type="button" @click="resetPage">
@@ -171,6 +174,7 @@ const goToPage = (numPage) => {
                   Go back
                 </button>
               </div>
+              <!--
               <div class="h-12 w-12 mx-6 px-2" v-if="isItalian">
                 <button type="button" @click="useOtherVersion()">
                   <img src="/assets/convImg/flagUS.png" alt="US flag" />
@@ -183,6 +187,7 @@ const goToPage = (numPage) => {
                   Italiano
                 </button>
               </div>
+              -->
             </div>
 
             <div
