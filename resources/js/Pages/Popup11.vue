@@ -434,7 +434,8 @@ function populateSelectedReaderForUserID(newReader,user_id) {
   selectedReader.isActiveBookmark = newReader[0].isActiveBookmark
   selectedReader.src = newReader[0].src
   newReader.splice(0,1) //Remove item at [0]. 2nd parameter means remove one item only
-  axios.put(route('reader', { uuid: selectedReader.uuid, user_id: user_id }));
+//   axios.put(route('reader', { uuid: selectedReader.uuid, user_id: user_id }));
+  axios.put(`/api/reader/${user_id}`, {uuid: selectedReader.uuid},)
 }
 
 </script>
